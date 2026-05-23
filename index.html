@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>GOVERNMENT ITI CHACKAI - EXAMS</title>
 
-    <!-- WhatsApp and Social Media Link Preview Metadata -->
+    <!-- WhatsApp Preview Metadata -->
     <meta property="og:title" content="GOVERNMENT ITI CHACKAI - EXAMS" />
     <meta property="og:description" content="Official Examination Portal. Select your model exam below." />
     <meta property="og:url" content="https://itichackai.github.io/" />
     <meta property="og:type" content="website" />
 
-    <!-- Google Material Icons for the portal buttons -->
+    <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
@@ -22,35 +22,50 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6f9;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column; /* Stacks header above the container */
+            min-height: 100vh;
+        }
+
+        /* --- Full-Width Green Header --- */
+        .full-width-header {
+            width: 100%;
+            background-color: #1b5e20; /* Deep green */
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 10;
+        }
+        .full-width-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .full-width-header p {
+            margin: 8px 0 0 0;
+            font-size: 15px;
+            opacity: 0.9;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- Center Container for Buttons --- */
+        .main-content {
+            flex-grow: 1; /* Pushes footer down */
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            align-items: center; /* Vertically center buttons between header and footer */
+            padding: 40px 20px;
         }
         .portal-container {
             width: 100%;
-            max-width: 500px;
-            padding: 30px 20px;
-            text-align: center;
-        }
-        .header-box {
-            background-color: #1b5e20; /* Deep green matching ITI themes */
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .header-box h1 {
-            margin: 0;
-            font-size: 22px;
-            letter-spacing: 0.5px;
-        }
-        .header-box p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            opacity: 0.9;
+            max-width: 480px;
         }
         .buttons-grid {
             display: flex;
@@ -61,48 +76,55 @@
             background-color: #ffffff;
             color: #333333;
             text-decoration: none;
-            padding: 20px;
+            padding: 22px;
             border-radius: 12px;
             display: flex;
             align-items: center;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #e0e0e0;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            border: 2px solid transparent;
         }
-        .exam-card:active, .exam-card:hover {
+        .exam-card:active {
+            transform: translateY(1px);
+        }
+        .exam-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             border-color: #1b5e20;
         }
         .icon-box {
             background-color: #e8f5e9;
             color: #1b5e20;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-right: 20px;
+            flex-shrink: 0; /* Prevents icon from shrinking on narrow screens */
         }
         .icon-box .material-icons {
-            font-size: 28px;
+            font-size: 30px;
         }
         .text-box {
             text-align: left;
         }
         .text-box h2 {
             margin: 0;
-            font-size: 18px;
+            font-size: 19px;
             color: #1b5e20;
+            font-weight: 600;
         }
         .text-box p {
-            margin: 4px 0 0 0;
-            font-size: 13px;
+            margin: 5px 0 0 0;
+            font-size: 14px;
             color: #666666;
+            line-height: 1.4;
         }
         .footer-text {
-            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
             font-size: 12px;
             color: #999999;
         }
@@ -110,41 +132,46 @@
 </head>
 <body>
 
-    <div class="portal-container">
-        
-        <div class="header-box">
-            <h1>GOVERNMENT ITI CHACKAI</h1>
-            <p>Online Examination Portal</p>
+    <!-- Full-Width Green Header spanning edge-to-edge -->
+    <header class="full-width-header">
+        <h1>GOVERNMENT ITI CHACKAI</h1>
+        <p>ONLINE EXAMINATION PORTAL</p>
+    </header>
+
+    <!-- Main area for centered buttons -->
+    <main class="main-content">
+        <div class="portal-container">
+            <div class="buttons-grid">
+                
+                <!-- Link Card for Exam 1 -->
+                <a href="https://itichackai.github.io/modelexam1" class="exam-card">
+                    <div class="icon-box">
+                        <span class="material-icons">assignment</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>Model Examination 1</h2>
+                        <p>Click here to start Test Paper 1</p>
+                    </div>
+                </a>
+
+                <!-- Link Card for Exam 2 -->
+                <a href="https://itichackai.github.io/modelexam2" class="exam-card">
+                    <div class="icon-box">
+                        <span class="material-icons">assignment_turned_in</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>Model Examination 2</h2>
+                        <p>Click here to start Test Paper 2</p>
+                    </div>
+                </a>
+
+            </div>
         </div>
+    </main>
 
-        <div class="buttons-grid">
-            
-            <!-- Link Card for Exam 1 -->
-            <a href="https://itichackai.github.io/modelexam1" class="exam-card">
-                <div class="icon-box">
-                    <span class="material-icons">assignment</span>
-                </div>
-                <div class="text-box">
-                    <h2>Model Exam 1</h2>
-                    <p>Click here to start Model Exam 1</p>
-                </div>
-            </a>
-
-            <!-- Link Card for Exam 2 -->
-            <a href="https://itichackai.github.io/modelexam2" class="exam-card">
-                <div class="icon-box">
-                    <span class="material-icons">assignment_turned_in</span>
-                </div>
-                <div class="text-box">
-                    <h2>Model Exam 2</h2>
-                    <p>Click here to start Model Exam 2</p>
-                </div>
-            </a>
-
-        </div>
-
-        <p class="footer-text">© 2026 Government ITI Chackai. All Rights Reserved.</p>
-    </div>
+    <footer class="footer-text">
+        © 2026 Government ITI Chackai. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
